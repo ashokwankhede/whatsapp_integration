@@ -6,7 +6,7 @@ from .models import WhatsAppMessage
 
 url = "https://graph.facebook.com/v21.0/104540952724423/messages"
 headers = {
-    "Authorization": "Bearer EAAYHZCszimyQBO0Lp8kB14Jre26i3o8PoJLRcS7bmTpZBBpnSVQ9G05Fc18ib18ZCEDBhGx25byHYvxxYaxdhaKXYFdmpgmBJQ9JaZBZCgs8eZCVeAsdwih6LR8lTyq7lmZB855WC8gwwfn9kJ2NCadsOFaWbeZB1Xk9e2GBN1BhqZCardrw223v9E5D2amGUzc6p7FG0zqU91nOVqtEWAs220TrlZC90ZD",
+    "Authorization": "Bearer EAAYHZCszimyQBO66muWa2wWyNF2T8vpsDv2NgFA32VOiFXi5FktqQwjDQdVWeOc1zgXC5b6d275lRtHdXoBvwHZB8g5XZACEhj5ZCYCg9uViCllsTiHEFMZCrbrrwtNoA2kxZCNKJ4N38jEsKoKa3PNWBYNmbgU3s6rEXZB5VP7w02YV3Xk6DIQOiNJBPQ11hZA41UchAWSdljNdxzkKMUtHdWPRiuQm",
     "Content-Type": "application/json",
 }
 @shared_task(bind=True, max_retries=3, default_retry_delay=10 * 60)

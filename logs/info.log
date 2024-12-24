@@ -141,3 +141,11 @@ Watching for file changes with StatReloader
 "POST /whatsapp_webhook HTTP/1.1" 200 20
 "POST /whatsapp_webhook HTTP/1.1" 200 20
 Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
