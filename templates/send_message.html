@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send WhatsApp Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5ddd5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #075E54;
+            font-size: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #075E54;
+        }
+
+        input, textarea, select, button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #25D366;
+            box-shadow: 0 0 5px rgba(37, 211, 102, 0.5);
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #1da851;
+        }
+
+        .error {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            color: #28a745;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .select-button {
+            background-color: #128C7E;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .select-button:hover {
+            background-color: #075E54;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #f0f0f0;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #075E54;
+            color: white;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #e5ddd5;
+        }
+
+        table tr:hover {
+            background-color: #c3d6c1;
+        }
+
+        table td .status-sent {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        table td .status-failed {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .select:-internal-list-box option:checked {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WhatsApp Message</h1>
+        <form method="POST" action="{% url 'send_message' %}">
+            {% csrf_token %}
+            
+            <label for="receiver">Select Contacts <span class="error">*</span></label>
+            <select name="receiver" id="receiver" required multiple>
+                <option value="">Select Contacts</option>
+                {% for message in contacts %}
+                <option value="{{ message.contact }}">{{ message.contact }}</option>
+                {% endfor %}
+            </select>
+
+            <div class="button-group">
+                <button type="button" class="select-button" onclick="selectAllOptions()">Select All</button>
+                <button type="button" class="select-button" onclick="deselectAllOptions()">Deselect All</button>
+            </div>
+
+            <label for="message">Message <span class="error">*</span></label>
+            <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+
+            {% if success %}
+                <p class="success">Message sent successfully!</p>
+            {% endif %}
+        </form>
+
+        <h2>Message History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sender</th>
+                    <th>Receiver</th>
+                    <th>Content</th>
+                    <th>Timestamp</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in messages %}
+                <tr>
+                    <td>{{ message.sender }}</td>
+                    <td>{{ message.receiver }}</td>
+                    <td>{{ message.content }}</td>
+                    <td>{{ message.timestamp }}</td>
+                    <td>
+                        <span class="status-{{ message.status|lower }}">
+                            {{ message.status }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function selectAllOptions() {
+            var select = document.getElementById("receiver");
+            for (var i = 0; i < select.options.length; i++) {
+                select.options[i].selected = true;
+            }
+        }
+
+        function deselectAllOptions() {
+            var select = document.getElementById("receiver");
+            for (var i = 0; i < select.options.length; i++) {
+                select.options[i].selected = false;
+            }
+        }
+    </script>
+</body>
+</html>
