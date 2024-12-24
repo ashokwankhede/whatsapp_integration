@@ -76,6 +76,3 @@ Use the public URL obtained in the previous step to validate the webhook in your
 Once all the above steps are complete, your project should be up and running!
 
 ---
-
-Feel free to contribute to this project or raise issues if you encounter any problems.
-
