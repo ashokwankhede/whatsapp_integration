@@ -135,3 +135,42 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+
+LOGS_DIR = os.path.join(BASE_DIR, 'logs')
+if not os.path.exists(LOGS_DIR):
+    os.makedirs(LOGS_DIR)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'INFO',  
+            'class': 'logging.StreamHandler',
+        },
+        'info_file': {
+            'level': 'INFO',  
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(LOGS_DIR, 'info.log'),
+        },
+        'error_file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(LOGS_DIR, 'error.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'info_file', 'error_file'],
+            'level': 'INFO',  
+            'propagate': True,
+        },
+        'myapp': {
+            'handlers': ['console', 'info_file', 'error_file'],
+            'level': 'INFO',  
+            'propagate': False,
+        },
+    },
+}
