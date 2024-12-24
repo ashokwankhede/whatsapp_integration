@@ -155,7 +155,7 @@
             {% csrf_token %}
             
             <label for="receiver">Select Contacts <span class="error">*</span></label>
-            <select name="receiver" id="receiver" required multiple>
+            <select name="receiver" id="receiver" >
                 <option value="">Select Contacts</option>
                 {% for message in contacts %}
                 <option value="{{ message.contact }}">{{ message.contact }}</option>
