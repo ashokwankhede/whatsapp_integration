@@ -124,3 +124,4 @@ Traceback (most recent call last):
     class PrefixedStrictRedis(GlobalKeyPrefixMixin, redis.Redis):
 AttributeError: 'NoneType' object has no attribute 'Redis'
 "POST / HTTP/1.1" 500 183463
+Internal Server Error: /whatsapp_webhook

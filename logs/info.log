@@ -149,3 +149,69 @@ D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloadi
 Watching for file changes with StatReloader
 D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
 Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 8802
+"GET / HTTP/1.1" 200 8802
+"GET / HTTP/1.1" 200 8802
+"GET / HTTP/1.1" 200 8802
+"GET / HTTP/1.1" 200 8802
+"GET / HTTP/1.1" 200 8802
+"GET / HTTP/1.1" 200 8802
+"GET / HTTP/1.1" 200 8819
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 13972
+"POST / HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 13972
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"GET / HTTP/1.1" 200 14889
+"GET / HTTP/1.1" 200 14893
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 14893
+"GET / HTTP/1.1" 200 14893
+"GET / HTTP/1.1" 200 14893
+"GET / HTTP/1.1" 200 14893
+"POST / HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 14893
+"GET / HTTP/1.1" 200 15296
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"GET / HTTP/1.1" 200 15715
+"GET / HTTP/1.1" 200 15715
+"GET / HTTP/1.1" 200 15707
+"GET / HTTP/1.1" 200 15715
+"POST / HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 15715
+"GET / HTTP/1.1" 200 16527
+"GET / HTTP/1.1" 200 16536
+"GET / HTTP/1.1" 200 16545
+"GET / HTTP/1.1" 200 16545
+"GET / HTTP/1.1" 200 16519
+"GET / HTTP/1.1" 200 16519
+"GET / HTTP/1.1" 200 16519
+Bad Request: /
+Bad Request: /
+Bad Request: /
+Bad Request: /
+Bad Request: /whatsapp_webhook
+Internal Server Error: /whatsapp_webhook
+Forbidden: /whatsapp_webhook
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 16519
+"GET / HTTP/1.1" 200 16519
+"GET / HTTP/1.1" 200 16519
+"GET / HTTP/1.1" 200 16519
+"GET / HTTP/1.1" 200 16519
+"GET / HTTP/1.1" 200 16519
+Watching for file changes with StatReloader
