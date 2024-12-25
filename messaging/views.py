@@ -28,10 +28,8 @@ def whatsapp_webhook(request):
             return HttpResponse("An unexpected error occurred.", status=500)
         
     if request.method == 'POST':
-
         try:
             logger.info(f"Incoming webhook payload: {request.data}")
-
             data = request.data
             entry = data.get('entry', [])
 

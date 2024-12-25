@@ -125,3 +125,4 @@ Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'Redis'
 "POST / HTTP/1.1" 500 183463
 Internal Server Error: /whatsapp_webhook
+Internal Server Error: /whatsapp_webhook

@@ -215,3 +215,90 @@ Watching for file changes with StatReloader
 "GET / HTTP/1.1" 200 16519
 "GET / HTTP/1.1" 200 16519
 Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 16519
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /
+Bad Request: /
+Bad Request: /whatsapp_webhook
+Internal Server Error: /whatsapp_webhook
+Forbidden: /whatsapp_webhook
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 16527
+"POST / HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 16527
+- Broken pipe from ('127.0.0.1', 61365)
+- Broken pipe from ('127.0.0.1', 61370)
+- Broken pipe from ('127.0.0.1', 61381)
+- Broken pipe from ('127.0.0.1', 61386)
+- Broken pipe from ('127.0.0.1', 61378)
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+"POST / HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 17337
+- Broken pipe from ('127.0.0.1', 61512)
+D:\whatsapp_integration\whatsapp_integration\messaging\views.py changed, reloading.
+- Broken pipe from ('127.0.0.1', 61519)
+- Broken pipe from ('127.0.0.1', 61516)
+"POST /whatsapp_webhook HTTP/1.1" 200 20
+Watching for file changes with StatReloader
+D:\whatsapp_integration\whatsapp_integration\messaging\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 10854
+"GET /admin/messaging/whatsappmessage/ HTTP/1.1" 200 18722
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/messaging/whatsappmessage/69/change/ HTTP/1.1" 200 11609
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+- Broken pipe from ('127.0.0.1', 61579)
+- Broken pipe from ('127.0.0.1', 61615)
+- Broken pipe from ('127.0.0.1', 61561)
+- Broken pipe from ('127.0.0.1', 61548)
+- Broken pipe from ('127.0.0.1', 61571)
+D:\whatsapp_integration\whatsapp_integration\messaging\service.py changed, reloading.
+Watching for file changes with StatReloader

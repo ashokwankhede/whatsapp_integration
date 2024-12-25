@@ -8,6 +8,7 @@ from .service import WhatsAppService
 import requests
 from django.core.exceptions import ValidationError
 
+
 class WhatsAppMessageModelTest(TestCase):
     def setUp(self):
         self.message = WhatsAppMessage.objects.create(
