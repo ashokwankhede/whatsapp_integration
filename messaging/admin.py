@@ -3,7 +3,7 @@ from .models import WhatsAppMessage, WhatsappContacts
 
 @admin.register(WhatsAppMessage)
 class WhatsAppMessageAdmin(admin.ModelAdmin):
-    list_display = ('sender', 'receiver', 'content', 'timestamp', 'status')
+    list_display = ('sender', 'receiver', 'content', 'timestamp', 'status', 'message_id')
 
 
 @admin.register(WhatsappContacts)

@@ -78,6 +78,20 @@ def send_message(request):
         
         return redirect('send_message')
 
-    messages = WhatsAppMessage.objects.all().order_by('-timestamp')
     contacts = WhatsappContacts.objects.all().order_by('-timestamp')
-    return render(request, 'send_message.html', {"messages": messages, "contacts": contacts})
+    return render(request, 'send_message.html', {"contacts": contacts})
+
+
+@api_view(["GET"])
+def get_table_history(request):
+    messages = WhatsAppMessage.objects.all().order_by('-timestamp')
+    data = [{
+        "sender": message.sender,
+            "receiver": message.receiver,
+            "content": message.content,
+            "timestamp": message.timestamp.strftime("%Y-%m-%d %H:%M:%S"),
+            "status": message.status
+    } 
+    for message in messages
+    ]
+    return Response(data=data)

@@ -139,8 +139,8 @@
             font-weight: bold;
         }
 
-        table td .status-received {
-            color: #3f37c9;
+        table td .status-delivered {
+            color: #007bff; 
             font-weight: bold;
         }
 
@@ -149,75 +149,16 @@
             font-weight: bold;
         }
 
-
-
-        .select:-internal-list-box option:checked {
-            color: #28a745;
+        table td .status-received {
+            color: #ffc107;
+            font-weight: bold;
         }
 
-        /* dropdown css start */
-        .dropdown {
-            position: relative;
-            width: 200px;
-            font-family: Arial, sans-serif;
+        table td .status-read {
+            color: #20c997;
+            font-weight: bold;
         }
 
-        .dropdown-button {
-            width: 100%;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border: 1px solid #ccc;
-            text-align: left;
-            cursor: pointer;
-            border-radius: 4px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        .dropdown-button span {
-            background-color: #007bff;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 14px;
-            margin-right: 5px;
-        }
-
-        .dropdown-button span .remove-item {
-            margin-left: 5px;
-            cursor: pointer;
-        }
-
-        .dropdown-list {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            border: 1px solid #ccc;
-            background-color: white;
-            max-height: 200px;
-            overflow-y: auto;
-            z-index: 1;
-            border-radius: 4px;
-        }
-
-        .dropdown-list.show {
-            display: block;
-        }
-
-        .dropdown-item {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .dropdown-item:hover {
-            background-color: #f1f1f1;
-        }
-
-        
-        /* dropdown css end */
     </style>
 </head>
 <body>
@@ -225,19 +166,6 @@
         <h1>WhatsApp Message</h1>
         <form method="POST" action="{% url 'send_message' %}">
             {% csrf_token %}
-
-             <!-- dropdown html start
-            <div class="dropdown">
-                <input class="dropdown-button">Select Fruits</input>
-                <div class="dropdown-list">
-                    <div class="dropdown-item" data-value="apple">Apple</div>
-                    <div class="dropdown-item" data-value="banana">Banana</div>
-                    <div class="dropdown-item" data-value="grape">Grape</div>
-                    <div class="dropdown-item" data-value="orange">Orange</div>
-                    <div class="dropdown-item" data-value="pineapple">Pineapple</div>
-                </div>
-            </div> -->
-               <!--  dropdown html end -->
             <label for="receiver">Select Contacts <span class="error">*</span></label>
             <select name="receiver" id="receiver" required >
                 <option value="">Select Contacts</option>
@@ -272,8 +200,8 @@
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody>
-                {% for message in messages %}
+            <tbody id="messageTableBody">
+                <!-- {% for message in messages %}
                 <tr>
                     <td>{{ message.sender }}</td>
                     <td>{{ message.receiver }}</td>
@@ -285,11 +213,11 @@
                         </span>
                     </td>
                 </tr>
-                {% endfor %}
+                {% endfor %} -->
             </tbody>
         </table>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function selectAllOptions() {
             var select = document.getElementById("receiver");
@@ -304,65 +232,39 @@
                 select.options[i].selected = false;
             }
         }
+        function fetchTableData() {
+            $.ajax({
+                url:"{% url 'get-table-history' %}",
+                method:"GET",
+                success: function(data) {
+                    const tableBody = $("#messageTableBody");
+                    tableBody.empty();
+                    data.forEach(function(message) {
+                    const row = `
+                        <tr>
+                            <td>${message.sender}</td>
+                            <td>${message.receiver}</td>
+                            <td>${message.content}</td>
+                            <td>${message.timestamp}</td>
+                            <td>
+                                <span class="status-${message.status.toLowerCase()}">
+                                    ${message.status}
+                                </span>
+                            </td>
+                        </tr>
+                    `;
+                    tableBody.append(row);
+                });
 
-        // // dropdown js start 
-        // const dropdownButton = document.querySelector('.dropdown-button');
-        // const dropdownList = document.querySelector('.dropdown-list');
-        // const dropdownItems = document.querySelectorAll('.dropdown-item');
-        // let selectedItems = [];
-
-        // // Toggle dropdown visibility
-        // dropdownButton.addEventListener('click', () => {
-        //     dropdownList.classList.toggle('show');
-        // });
-
-        // // Handle item selection
-        // dropdownItems.forEach(item => {
-        //     item.addEventListener('click', () => {
-        //         const value = item.getAttribute('data-value');
-                
-        //         // Check if the value is already selected
-        //         if (selectedItems.includes(value)) {
-        //             selectedItems = selectedItems.filter(item => item !== value);
-        //             item.style.backgroundColor = '';  // Reset item style
-        //         } else {
-        //             selectedItems.push(value);
-        //             item.style.backgroundColor = '#f1f1f1';  // Highlight selected item
-        //         }
-
-        //         updateDropdownButton();
-        //     });
-        // });
-
-        // // Update selected items inside the dropdown button
-        // function updateDropdownButton() {
-        //     dropdownButton.innerHTML = ''; // Reset button text
-        //     selectedItems.forEach(item => {
-        //         const span = document.createElement('span');
-        //         span.innerHTML = `${item} <span class="remove-item">&#10005;</span>`;
-        //         span.querySelector('.remove-item').addEventListener('click', (e) => {
-        //             e.stopPropagation(); // Prevent closing dropdown when removing item
-        //             selectedItems = selectedItems.filter(i => i !== item);
-        //             updateDropdownItems();
-        //         });
-        //         dropdownButton.appendChild(span);
-        //         dropdownButton.style = `display:flex; flex-wrap:wrap`
-        //     });
-        // }
-
-        // // Update dropdown items to reflect selected state
-        // function updateDropdownItems() {
-        //     dropdownItems.forEach(item => {
-        //         const value = item.getAttribute('data-value');
-        //         if (selectedItems.includes(value)) {
-        //             item.style.backgroundColor = '#f1f1f1';
-        //         } else {
-        //             item.style.backgroundColor = '';
-        //         }
-        //     });
-        // }
-
-        //dropdown js end 
+                },
+                error: function(err) {
+                console.error("Error fetching messages:", err);
+            }
+            })
+        }
+        
+        setInterval(fetchTableData, 2000);
+        fetchTableData();
     </script>
 </body>
 </html>
